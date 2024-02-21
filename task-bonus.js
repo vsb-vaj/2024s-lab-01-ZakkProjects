@@ -6,10 +6,14 @@
 // * * * *
 // * * * * *
 
-// Your code:
-export const drawTriangle = (length = 5) => {
-  
-    // ... write code ...
+const drawTriangle = (length = 5) => {
+	for (let i = 1; i <= length; i++) {
+		let row = "";
+		for (let j = 1; j <= i; j++) {
+			row += "* ";
+		}
+		console.log(row);
+	}
 };
 
 // 2#  ========== BONUS =======================
@@ -26,11 +30,20 @@ export const drawTriangle = (length = 5) => {
 // * A V A S C R I P T
 // J A V A S C R I P T
 
-// Your code:
-export const drawJavascriptWord = (word = "javascript") => {
-  // ... write code ...
+const displayPattern = (word = "JAVASCRIPT") => {
+	const length = word.length;
+	for (let i = 0; i < length + 1; i++) {
+		let row = "";
+		for (let j = 0; j < length; j++) {
+			if (length - i > j) {
+				row += `* `;
+			} else {
+				row += `${word[j]} `;
+			}
+		}
+		console.log(row.substring(0, row.length - 1));
+	}
 };
-
 
 // 3#  ========== BONUS =======================
 // Create function that takes array of vehicles with measured top speeds. Return array of vehicle with top speed.
@@ -46,7 +59,9 @@ export const drawJavascriptWord = (word = "javascript") => {
 //     { name: "AT-AT", topSpeed: 21 },
 //   ];
 
-// Your code:
-export const getVehiclesAndTopSpeed = (vehicles) => {
-  
+const getVehiclesAndTopSpeed = (vehicles) => {
+	return vehicles.map((vehicle) => {
+		const topSpeed = Math.max(...vehicle.measuredSpeeds);
+		return { name: vehicle.name, topSpeed };
+	});
 };
