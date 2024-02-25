@@ -15,8 +15,8 @@ for (let i = 0; i < length; i = i + 1) {
 // a) Function which will print to console a whole array
 const printArray = (numbers) => {
 	// depends if the debug way, or the pretty way
-  console.log(numbers);
-  console.log(numbers.join(" "));
+	console.log(numbers);
+	console.log(numbers.join(", "));
 };
 
 // b) Function which will print to console the length of array
@@ -64,10 +64,10 @@ const printAverage = (numbers) => {
 const printLargestsIndex = (numbers) => {
 	const max = Math.max(...numbers);
 	numbers.find((num, index) => {
-    if (num === max) {
-      console.log(index);
-    }
-  }
+		if (num === max) {
+			console.log(index);
+		}
+	});
 };
 
 // k) Function which will print to console the even numbers (not the array of even numbers),
